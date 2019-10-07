@@ -1,0 +1,3 @@
+STR_QUESTION = "?"
+STR_AND = "&"
+STR_EQUALS = "="
