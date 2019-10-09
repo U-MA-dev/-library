@@ -7,12 +7,14 @@ def main():
     source_manager = SourceManager()
 
     input_model = SearchConditionModel()
-    input_model.keyword = "test"
+    input_model.keyword = "テスト"
+    input_model.hits = "3"
 
     output_model: EntireInfoModel = \
         source_manager.fetch_search_info(input_model)
     for item_model in output_model.item_info_model_list:
-        print(item_model.tag_id_list)
+        # print(item_model.tag_id_list)
+        pass
 
 
 if __name__ == "__main__":

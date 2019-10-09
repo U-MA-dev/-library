@@ -7,8 +7,8 @@ from constants import commonConstants as cc
 from constants.utility import isEmpty
 from ichibaItem.constants.parameter import InputParameter as ip
 from ichibaItem.constants.parameter import OutputParameter as op
-from model.inputmodel import SearchConditionModel
-from model.outputmodel import EntireInfoModel, ItemInfoModel
+from ichibaItem.model.inputmodel import SearchConditionModel
+from ichibaItem.model.outputmodel import EntireInfoModel, ItemInfoModel
 
 CONFIG_DIR = environ["CONFIG_DIR"]
 CONFIG_FILE = environ["CONFIG_FILE"]
@@ -52,7 +52,7 @@ class SourceManager():
         output_model.first = entire_data[op.STR_FIRST]
         output_model.last = entire_data[op.STR_LAST]
         output_model.hits = entire_data[op.STR_HITS]
-        output_model.carrir = entire_data[op.STR_CARRIER]
+        output_model.carrier = entire_data[op.STR_CARRIER]
         output_model.page_count = entire_data[op.STR_PAGE_COUNT]
         output_model.item_info_model_list = []
         output_model.genre_info_model_list = []
@@ -89,6 +89,8 @@ class SourceManager():
                 item_data[op.STR_SHOP_OF_THE_YEAR_FLAG]
             item_info_model.ship_over_seas_flag = \
                 item_data[op.STR_SHIP_OVER_SEAS_FLAG]
+            item_info_model.ship_over_seas_area = \
+                item_data[op.STR_SHIP_OVER_SEAS_AREA]
             item_info_model.asuraku_flag = item_data[op.STR_ASURAKU_FLAG]
             item_info_model.asuraku_closing_time = \
                 item_data[op.STR_ASURAKU_CLOSING_TIME]
@@ -105,6 +107,7 @@ class SourceManager():
                 item_data[op.STR_POINT_RATE_END_TIME]
             item_info_model.gift_flag = item_data[op.STR_GIFT_FLAG]
             item_info_model.shop_name = item_data[op.STR_SHOP_NAME]
+            item_info_model.shop_code = item_data[op.STR_SHOP_CODE]
             item_info_model.shop_url = item_data[op.STR_SHOP_URL]
             item_info_model.shop_affiliate_url = \
                 item_data[op.STR_SHOP_AFFILIATE_URL]
@@ -115,13 +118,15 @@ class SourceManager():
 
             output_model.item_info_model_list.append(item_info_model)
 
-        # 下記情報は使用されていない?
+        # TODO
         # ジャンルごとの商品数
         # タグごとの商品数
 
         return output_model
 
     def __generate_url(self, input_model: SearchConditionModel):
+        if input_model is None:
+            input_model = SearchConditionModel()
         if isEmpty(input_model.format):
             input_model.format = self.format
         if isEmpty(input_model.application_id):
@@ -130,11 +135,6 @@ class SourceManager():
             input_model.affiliate_id = self.affiliate_id
 
         generated_url_list = []
-        generated_url_list.append(
-            ip.STR_FORMAT +
-            cc.STR_EQUALS +
-            input_model.format
-        )
         generated_url_list.append(
             ip.STR_APPLICATION_ID +
             cc.STR_EQUALS +
@@ -145,6 +145,30 @@ class SourceManager():
                 ip.STR_AFFILIATE_ID +
                 cc.STR_EQUALS +
                 input_model.affiliate_id)
+        if not isEmpty(input_model.format):
+            generated_url_list.append(
+                ip.STR_FORMAT +
+                cc.STR_EQUALS +
+                input_model.format
+            )
+        if not isEmpty(input_model.callback):
+            generated_url_list.append(
+                ip.STR_CALLBACK +
+                cc.STR_EQUALS +
+                input_model.callback
+            )
+        if not isEmpty(input_model.elements):
+            generated_url_list.append(
+                ip.STR_ELEMENTS +
+                cc.STR_EQUALS +
+                input_model.elements
+            )
+        if not isEmpty(input_model.format_version):
+            generated_url_list.append(
+                ip.STR_FORMAT_VERSION +
+                cc.STR_EQUALS +
+                input_model.format_version
+            )
         if not isEmpty(input_model.keyword):
             generated_url_list.append(
                 ip.STR_KEYWORD +
