@@ -1,4 +1,7 @@
-def isEmpty(s):
-    if s is None or s.isspace():
+def isEmpty(obj):
+    if obj is None:
         return True
+    if isinstance(obj, str):
+        if obj.isspace():
+            return True
     return False
