@@ -1,7 +1,7 @@
 from typing import List
 
 
-class EntireInfoModel():
+class EntireModel():
     def __init__(self):
         self.count: int = None
         self.page: int = None
@@ -10,12 +10,12 @@ class EntireInfoModel():
         self.hits: int = None
         self.carrier: int = None
         self.page_count: int = None
-        self.item_info_model_list: List[ItemInfoModel] = []
-        self.genre_info_model_list: List[GenreInfoModel] = []
-        self.tag_info_model_list: List[TagInfoModel] = []
+        self.item_model_list: List[ItemModel] = []
+        self.genre_model_list: List[GenreModel] = []
+        self.tag_group_model_list: List[TagGroupModel] = []
 
 
-class ItemInfoModel():
+class ItemModel():
     def __init__(self):
         self.item_name: str = None
         self.catchcopy: str = None
@@ -54,17 +54,46 @@ class ItemInfoModel():
         self.tag_id_list: List[int] = None
 
 
-class GenreInfoModel():
+class GenreModel():
     def __init__(self):
-        self.genre_id = None
-        self.genre_name = None
-        self.item_count = None
-        self.genre_level = None
+        self.parent_genre_model: ParentGenreModel = None
+        self.current_genre_model: CurrentGenreModel = None
+        self.child_genre_model_list: List[ChildGenreModel] = []
 
 
-class TagInfoModel():
+class BaseGenreModel():
     def __init__(self):
-        self.tag_id = None
-        self.tag_name = None
-        self.parent_tag_id = None
-        self.item_count = None
+        self.genre_id: str = None
+        self.genre_name: str = None
+        self.genre_level: str = None
+
+
+class ParentGenreModel(BaseGenreModel):
+    pass
+
+
+class CurrentGenreModel(BaseGenreModel):
+    def __init__(self):
+        super().__init__()
+        self.item_count: str = None
+
+
+class ChildGenreModel(BaseGenreModel):
+    def __init__(self):
+        super().__init__()
+        self.item_count: str = None
+
+
+class TagGroupModel():
+    def __init__(self):
+        self.tag_group_id: int = None
+        self.tag_group_name: str = None
+        self.tag_model_list: List[TagModel] = []
+
+
+class TagModel():
+    def __init__(self):
+        self.tag_id: int = None
+        self.tag_name: str = None
+        self.parent_tag_id: int = None
+        self.item_count: int = None

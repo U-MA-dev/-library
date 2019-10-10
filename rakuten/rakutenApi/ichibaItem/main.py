@@ -7,8 +7,10 @@ def main():
     source_manager = SourceManager()
 
     input_model = SearchConditionModel()
-    input_model.keyword = "テスト"
-    input_model.hits = "3"
+    input_model.hits = 1
+    input_model.genre_id = "566031"
+    input_model.genre_infomation_flag = 1
+    input_model.tag_information_flag = 1
 
     output_model: EntireInfoModel = \
         source_manager.fetch_search_info(input_model)

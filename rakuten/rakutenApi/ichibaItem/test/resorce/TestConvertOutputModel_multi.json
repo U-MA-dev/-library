@@ -155,12 +155,121 @@
         }
     ],
     "pageCount": 100,
-    "TagInformation": [],
+    "TagInformation": [
+        {
+            "tagGroup": {
+                "tags": [
+                    {
+                        "tag": {
+                            "parentTagId": 0,
+                            "tagName": "初回版・特装版",
+                            "itemCount": 0,
+                            "tagId": 1011605
+                        }
+                    }
+                ],
+                "tagGroupId": 1001050,
+                "tagGroupName": "限定特典"
+            }
+        },
+        {
+            "tagGroup": {
+                "tags": [
+                    {
+                        "tag": {
+                            "parentTagId": 1,
+                            "tagName": "test1",
+                            "itemCount": 11,
+                            "tagId": 111
+                        }
+                    },
+                    {
+                        "tag": {
+                            "parentTagId": 2,
+                            "tagName": "test2",
+                            "itemCount": 22,
+                            "tagId": 222
+                        }
+                    },
+                    {
+                        "tag": {
+                            "parentTagId": 3,
+                            "tagName": "test3",
+                            "itemCount": 33,
+                            "tagId": 333
+                        }
+                    }
+                ],
+                "tagGroupId": 2,
+                "tagGroupName": "testGroupName2"
+            }
+        },
+        {
+            "tagGroup": {
+                "tags": [
+                    {
+                        "tag": {
+                            "parentTagId": 31,
+                            "tagName": "test31",
+                            "itemCount": 311,
+                            "tagId": 3111
+                        }
+                    }
+                ],
+                "tagGroupId": 3,
+                "tagGroupName": "testGroupName3"
+            }
+        }
+    ],
     "hits": 3,
     "last": 3,
     "count": 164282,
     "page": 1,
     "carrier": 0,
-    "GenreInformation": [],
+    "GenreInformation": [
+        {
+            "current": [
+                {
+                    "genreLevel": "4",
+                    "itemCount": "1303",
+                    "genreName": "その他",
+                    "genreId": "208714"
+                }
+            ],
+            "children": [
+                {
+                    "child": {
+                        "genreLevel": "3",
+                        "itemCount": "5160",
+                        "genreName": "その他",
+                        "genreId": "566035"
+                    }
+                },
+                {
+                    "child": {
+                        "genreLevel": "2",
+                        "itemCount": "22",
+                        "genreName": "testGenreName2",
+                        "genreId": "222"
+                    }
+                },
+                {
+                    "child": {
+                        "genreLevel": "3",
+                        "itemCount": "33",
+                        "genreName": "testGenreName3",
+                        "genreId": "333"
+                    }
+                }
+            ],
+            "parent": [
+                {
+                    "genreLevel": "3",
+                    "genreName": "語学関係資格",
+                    "genreId": "208709"
+                }
+            ]
+        }
+    ],
     "first": 1
 }

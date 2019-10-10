@@ -97,7 +97,7 @@ class OutputParameter:
     STR_TAG_IDS = "tagIds"
 
     # ジャンルごとの商品数
-    STR_GENRE_INFOMATION = "GenreInformation"  # 全体
+    STR_GENRE_INFORMATION = "GenreInformation"  # 全体
     STR_PARENT = "parent"  # 入力されたジャンルの親ジャンル
     STR_CURRENT = "current"  # ユーザの入力したジャンルID
     STR_CHILD = "child"  # ユーザの入力したジャンルIDの子ジャンル

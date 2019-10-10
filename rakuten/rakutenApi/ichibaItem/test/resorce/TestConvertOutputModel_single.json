@@ -49,12 +49,57 @@
         }
     ],
     "pageCount": 100,
-    "TagInformation": [],
+    "TagInformation": [
+        {
+            "tagGroup": {
+                "tags": [
+                    {
+                        "tag": {
+                            "parentTagId": 0,
+                            "tagName": "初回版・特装版",
+                            "itemCount": 0,
+                            "tagId": 1011605
+                        }
+                    }
+                ],
+                "tagGroupId": 1001050,
+                "tagGroupName": "限定特典"
+            }
+        }
+    ],
     "hits": 1,
     "last": 1,
-    "count": 164282,
+    "count": 1303,
     "page": 1,
     "carrier": 0,
-    "GenreInformation": [],
+    "GenreInformation": [
+        {
+            "current": [
+                {
+                    "genreLevel": "4",
+                    "itemCount": "1303",
+                    "genreName": "その他",
+                    "genreId": "208714"
+                }
+            ],
+            "children": [
+                {
+                    "child": {
+                        "genreLevel": "3",
+                        "itemCount": "5160",
+                        "genreName": "その他",
+                        "genreId": "566035"
+                    }
+                }
+            ],
+            "parent": [
+                {
+                    "genreLevel": "3",
+                    "genreName": "語学関係資格",
+                    "genreId": "208709"
+                }
+            ]
+        }
+    ],
     "first": 1
 }
