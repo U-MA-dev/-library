@@ -16,7 +16,7 @@ from ichibaItem.model.outputmodel import \
     TagModel, ParentGenreModel, CurrentGenreModel, ChildGenreModel
 
 
-RESORCE_FOLDER = os.path.join(os.getcwd(), "resorce")
+RESORCE_FOLDER = os.path.abspath("resorce")
 
 
 class TestConvertOutputModel(unittest.TestCase):
