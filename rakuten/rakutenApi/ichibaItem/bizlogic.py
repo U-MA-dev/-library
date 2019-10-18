@@ -1,8 +1,7 @@
-from os import environ, path
+from os import path
 
 import requests
 import yaml
-
 from constants import commonConstants as cc
 from constants.utility import isEmpty
 from ichibaItem.constants.parameter import InputParameter as ip
@@ -13,14 +12,12 @@ from ichibaItem.model.outputmodel import \
     TagModel, ParentGenreModel, CurrentGenreModel, ChildGenreModel
 
 
-CONFIG_DIR = environ["CONFIG_DIR"]
-CONFIG_FILE = environ["CONFIG_FILE"]
-APPLICATION_ID = environ["APPLICATION_ID"]
-AFFILIATE_ID = environ["AFFILIATE_ID"]
+CONFIG_DIR = path.abspath(path.join(path.dirname(__file__), "..", "config"))
+CONFIG_FILE = "rakutenApi.yaml"
 
 
 class SourceManager():
-    def __init__(self):
+    def __init__(self, APPLICATION_ID, AFFILIATE_ID):
         config_file = path.join(CONFIG_DIR, CONFIG_FILE)
         with open(config_file, "r") as f:
             data = yaml.safe_load(f)
@@ -36,7 +33,6 @@ class SourceManager():
         """
         url = self.__generate_url(input_model)
         response = requests.get(url)
-        print(response.json())
         response.raise_for_status()
         output_model = self.__convert_output_model(response)
         return output_model

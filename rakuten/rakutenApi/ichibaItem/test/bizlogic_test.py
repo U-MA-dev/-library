@@ -2,7 +2,7 @@
 # flake8: noqa
 
 import json
-import os
+from os import path
 import unittest
 from unittest.mock import MagicMock
 
@@ -16,14 +16,16 @@ from ichibaItem.model.outputmodel import \
     TagModel, ParentGenreModel, CurrentGenreModel, ChildGenreModel
 
 
-RESORCE_FOLDER = os.path.abspath("resorce")
+RESORCE_FOLDER = path.abspath("resorce")
+APPLICATION_ID = "test_application_id"
+AFFILIATE_ID = "test_affiliate_id"
 
 
 class TestConvertOutputModel(unittest.TestCase):
 
     def test_json_data_single(self):
         response_json = None
-        with open(os.path.join(
+        with open(path.join(
                 RESORCE_FOLDER, "TestConvertOutputModel_single.json")) as f:
             response_json = json.loads(f.read())
 
@@ -32,7 +34,7 @@ class TestConvertOutputModel(unittest.TestCase):
         response_moc.json = MagicMock(return_value=response_json)
 
         # テスト実施
-        source_manager = SourceManager()
+        source_manager = SourceManager(APPLICATION_ID, AFFILIATE_ID)
         entire_model: EntireModel = \
             source_manager._SourceManager__convert_output_model(response_moc)
 
@@ -166,7 +168,7 @@ class TestConvertOutputModel(unittest.TestCase):
 
     def test_json_data_multi(self):
         response_json = None
-        with open(os.path.join(
+        with open(path.join(
                 RESORCE_FOLDER, "TestConvertOutputModel_multi.json")) as f:
             response_json = json.loads(f.read())
 
@@ -175,7 +177,7 @@ class TestConvertOutputModel(unittest.TestCase):
         response_moc.json = MagicMock(return_value=response_json)
 
         # テスト実施
-        sourceManager = SourceManager()
+        sourceManager = SourceManager(APPLICATION_ID, AFFILIATE_ID)
         entire_model: EntireModel = \
             sourceManager._SourceManager__convert_output_model(response_moc)
 
@@ -530,12 +532,10 @@ class TestGenerateUrl(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
 
-        CONFIG_DIR = os.environ["CONFIG_DIR"]
-        CONFIG_FILE = os.environ["CONFIG_FILE"]
-        APPLICATION_ID = os.environ["APPLICATION_ID"]
-        AFFILIATE_ID = os.environ["AFFILIATE_ID"]
+        CONFIG_DIR = path.abspath(path.join(path.dirname(__file__),"..", "..", "config"))
+        CONFIG_FILE = "rakutenApi.yaml"
 
-        config_file = os.path.join(CONFIG_DIR, CONFIG_FILE)
+        config_file = path.join(CONFIG_DIR, CONFIG_FILE)
         with open(config_file, "r") as f:
             data = yaml.safe_load(f)
             cls.application_id = APPLICATION_ID
@@ -628,7 +628,7 @@ class TestGenerateUrl(unittest.TestCase):
             "genreInformationFlag=" + "39" + "&" + \
             "tagInformationFlag=" + "40"
 
-        source_manager = SourceManager()
+        source_manager = SourceManager(APPLICATION_ID, AFFILIATE_ID)
         url = source_manager._SourceManager__generate_url(input_model)
 
         self.assertEqual(url, expected_url)
@@ -718,7 +718,7 @@ class TestGenerateUrl(unittest.TestCase):
             "genreInformationFlag=" + "39" + "&" + \
             "tagInformationFlag=" + "40"
 
-        source_manager = SourceManager()
+        source_manager = SourceManager(APPLICATION_ID, AFFILIATE_ID)
         url = source_manager._SourceManager__generate_url(input_model)
 
         self.assertEqual(url, expected_url)
@@ -731,7 +731,7 @@ class TestGenerateUrl(unittest.TestCase):
             "affiliateId=" + self.affiliate_id + "&" \
             "format=" + self.format
 
-        source_manager = SourceManager()
+        source_manager = SourceManager(APPLICATION_ID, AFFILIATE_ID)
         url = source_manager._SourceManager__generate_url(input_model)
 
         self.assertEqual(url, expected_url)
