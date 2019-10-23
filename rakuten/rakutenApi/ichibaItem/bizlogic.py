@@ -87,9 +87,9 @@ class SourceManager():
                 item_data[op.STR_CREDIT_CARD_FLAG]
             item_model.shop_of_the_year_flag = \
                 item_data[op.STR_SHOP_OF_THE_YEAR_FLAG]
-            item_model.ship_over_seas_flag = \
+            item_model.ship_overseas_flag = \
                 item_data[op.STR_SHIP_OVER_SEAS_FLAG]
-            item_model.ship_over_seas_area = \
+            item_model.ship_overseas_area = \
                 item_data[op.STR_SHIP_OVER_SEAS_AREA]
             item_model.asuraku_flag = item_data[op.STR_ASURAKU_FLAG]
             item_model.asuraku_closing_time = \

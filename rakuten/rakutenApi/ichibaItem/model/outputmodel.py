@@ -32,8 +32,8 @@ class ItemModel():
         self.postage_flag: int = None
         self.credit_card_flag: int = None
         self.shop_of_the_year_flag: int = None
-        self.ship_over_seas_flag: int = None
-        self.ship_over_seas_area: str = None
+        self.ship_overseas_flag: int = None
+        self.ship_overseas_area: str = None
         self.asuraku_flag: int = None
         self.asuraku_closing_time: str = None
         self.asuraku_area: str = None

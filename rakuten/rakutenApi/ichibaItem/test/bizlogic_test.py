@@ -86,9 +86,9 @@ class TestConvertOutputModel(unittest.TestCase):
                          1)
         self.assertEqual(item_model1.shop_of_the_year_flag,
                          0)
-        self.assertEqual(item_model1.ship_over_seas_flag,
+        self.assertEqual(item_model1.ship_overseas_flag,
                          0)
-        self.assertEqual(item_model1.ship_over_seas_area,
+        self.assertEqual(item_model1.ship_overseas_area,
                          "")
         self.assertEqual(item_model1.asuraku_flag,
                          0)
@@ -229,9 +229,9 @@ class TestConvertOutputModel(unittest.TestCase):
                          1)
         self.assertEqual(item_model1.shop_of_the_year_flag,
                          0)
-        self.assertEqual(item_model1.ship_over_seas_flag,
+        self.assertEqual(item_model1.ship_overseas_flag,
                          0)
-        self.assertEqual(item_model1.ship_over_seas_area,
+        self.assertEqual(item_model1.ship_overseas_area,
                          "")
         self.assertEqual(item_model1.asuraku_flag,
                          0)
@@ -313,9 +313,9 @@ class TestConvertOutputModel(unittest.TestCase):
                          1)
         self.assertEqual(item_model2.shop_of_the_year_flag,
                          0)
-        self.assertEqual(item_model2.ship_over_seas_flag,
+        self.assertEqual(item_model2.ship_overseas_flag,
                          0)
-        self.assertEqual(item_model2.ship_over_seas_area,
+        self.assertEqual(item_model2.ship_overseas_area,
                          "")
         self.assertEqual(item_model2.asuraku_flag,
                          0)
@@ -389,9 +389,9 @@ class TestConvertOutputModel(unittest.TestCase):
                          1)
         self.assertEqual(item_model3.shop_of_the_year_flag,
                          1)
-        self.assertEqual(item_model3.ship_over_seas_flag,
+        self.assertEqual(item_model3.ship_overseas_flag,
                          0)
-        self.assertEqual(item_model3.ship_over_seas_area,
+        self.assertEqual(item_model3.ship_overseas_area,
                          "")
         self.assertEqual(item_model3.asuraku_flag,
                          1)
