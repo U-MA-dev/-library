@@ -1,0 +1,105 @@
+{
+    "Items": [
+        {
+            "Item": {
+                "mediumImageUrls": [
+                    {
+                        "imageUrl": ""
+                    }
+                ],
+                "pointRate": 1,
+                "shopOfTheYearFlag": 0,
+                "affiliateRate": 3,
+                "shipOverseasFlag": 0,
+                "asurakuFlag": 0,
+                "endTime": "",
+                "taxFlag": 0,
+                "startTime": "",
+                "itemCaption": "",
+                "catchcopy": "",
+                "tagIds": [],
+                "smallImageUrls": [
+                    {
+                        "imageUrl": ""
+                    }
+                ],
+                "asurakuClosingTime": "",
+                "imageFlag": 1,
+                "availability": 1,
+                "shopAffiliateUrl": "",
+                "itemCode": "",
+                "postageFlag": 1,
+                "itemName": "",
+                "itemPrice": 822,
+                "pointRateEndTime": "",
+                "shopCode": "",
+                "affiliateUrl": "",
+                "giftFlag": 0,
+                "shopName": "",
+                "reviewCount": 0,
+                "asurakuArea": "",
+                "shopUrl": "",
+                "creditCardFlag": 1,
+                "reviewAverage": 0,
+                "shipOverseasArea": "",
+                "genreId": "",
+                "pointRateStartTime": "",
+                "itemUrl": ""
+            }
+        }
+    ],
+    "pageCount": 100,
+    "TagInformation": [
+        {
+            "tagGroup": {
+                "tags": [
+                    {
+                        "tag": {
+                            "parentTagId": 0,
+                            "tagName": "",
+                            "itemCount": 0,
+                            "tagId": 1011605
+                        }
+                    }
+                ],
+                "tagGroupId": 1001050,
+                "tagGroupName": ""
+            }
+        }
+    ],
+    "hits": 1,
+    "last": 1,
+    "count": 1303,
+    "page": 1,
+    "carrier": 0,
+    "GenreInformation": [
+        {
+            "current": [
+                {
+                    "genreLevel": "",
+                    "itemCount": "",
+                    "genreName": "",
+                    "genreId": ""
+                }
+            ],
+            "children": [
+                {
+                    "child": {
+                        "genreLevel": "",
+                        "itemCount": "",
+                        "genreName": "",
+                        "genreId": ""
+                    }
+                }
+            ],
+            "parent": [
+                {
+                    "genreLevel": "",
+                    "genreName": "",
+                    "genreId": ""
+                }
+            ]
+        }
+    ],
+    "first": 1
+}

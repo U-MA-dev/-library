@@ -2,8 +2,8 @@
 # flake8: noqa
 
 import json
-from os import path
 import unittest
+from os import path
 from unittest.mock import MagicMock
 
 import yaml
@@ -11,12 +11,12 @@ from requests import Response
 
 from ichibaItem.bizlogic import SourceManager
 from ichibaItem.model.inputmodel import SearchConditionModel
-from ichibaItem.model.outputmodel import \
-    EntireModel, ItemModel, GenreModel, TagGroupModel, \
-    TagModel, ParentGenreModel, CurrentGenreModel, ChildGenreModel
+from ichibaItem.model.outputmodel import (ChildGenreModel, CurrentGenreModel,
+                                          EntireModel, GenreModel, ItemModel,
+                                          ParentGenreModel, TagGroupModel,
+                                          TagModel)
 
-
-RESORCE_FOLDER = path.abspath("resorce")
+RESORCE_FOLDER = path.abspath(path.join(path.dirname(__file__), "resorce"))
 APPLICATION_ID = "test_application_id"
 AFFILIATE_ID = "test_affiliate_id"
 
@@ -55,7 +55,7 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model1.item_name,
                          "【中古】 TOEFL\u3000TEST対策iBTスピーキング ／川端淳司【著】 【中古】afb")
         self.assertEqual(item_model1.catchcopy,
-                         "")
+                         None)
         self.assertEqual(item_model1.item_code,
                          "bookoffonline:11274473")
         self.assertEqual(item_model1.item_price,
@@ -89,17 +89,17 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model1.ship_overseas_flag,
                          0)
         self.assertEqual(item_model1.ship_overseas_area,
-                         "")
+                         None)
         self.assertEqual(item_model1.asuraku_flag,
                          0)
         self.assertEqual(item_model1.asuraku_area,
-                         "")
+                         None)
         self.assertEqual(item_model1.affiliate_rate,
                          3)
         self.assertEqual(item_model1.start_time,
-                         "")
+                         None)
         self.assertEqual(item_model1.end_time,
-                         "")
+                         None)
         self.assertEqual(item_model1.review_count,
                          0)
         self.assertEqual(item_model1.review_average,
@@ -107,9 +107,9 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model1.point_rate,
                          1)
         self.assertEqual(item_model1.point_rate_start_time,
-                         "")
+                         None)
         self.assertEqual(item_model1.point_rate_end_time,
-                         "")
+                         None)
         self.assertEqual(item_model1.gift_flag,
                          0)
         self.assertEqual(item_model1.shop_name,
@@ -198,7 +198,7 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model1.item_name,
                          "【中古】 TOEFL\u3000TEST対策iBTスピーキング ／川端淳司【著】 【中古】afb")
         self.assertEqual(item_model1.catchcopy,
-                         "")
+                         None)
         self.assertEqual(item_model1.item_code,
                          "bookoffonline:11274473")
         self.assertEqual(item_model1.item_price,
@@ -232,17 +232,17 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model1.ship_overseas_flag,
                          0)
         self.assertEqual(item_model1.ship_overseas_area,
-                         "")
+                         None)
         self.assertEqual(item_model1.asuraku_flag,
                          0)
         self.assertEqual(item_model1.asuraku_area,
-                         "")
+                         None)
         self.assertEqual(item_model1.affiliate_rate,
                          3)
         self.assertEqual(item_model1.start_time,
-                         "")
+                         None)
         self.assertEqual(item_model1.end_time,
-                         "")
+                         None)
         self.assertEqual(item_model1.review_count,
                          0)
         self.assertEqual(item_model1.review_average,
@@ -250,9 +250,9 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model1.point_rate,
                          1)
         self.assertEqual(item_model1.point_rate_start_time,
-                         "")
+                         None)
         self.assertEqual(item_model1.point_rate_end_time,
-                         "")
+                         None)
         self.assertEqual(item_model1.gift_flag,
                          0)
         self.assertEqual(item_model1.shop_name,
@@ -316,11 +316,11 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model2.ship_overseas_flag,
                          0)
         self.assertEqual(item_model2.ship_overseas_area,
-                         "")
+                         None)
         self.assertEqual(item_model2.asuraku_flag,
                          0)
         self.assertEqual(item_model2.asuraku_area,
-                         "")
+                         None)
         self.assertEqual(item_model2.affiliate_rate,
                          3)
         self.assertEqual(item_model2.start_time,
@@ -334,9 +334,9 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model2.point_rate,
                          1)
         self.assertEqual(item_model2.point_rate_start_time,
-                         "")
+                         None)
         self.assertEqual(item_model2.point_rate_end_time,
-                         "")
+                         None)
         self.assertEqual(item_model2.gift_flag,
                          0)
         self.assertEqual(item_model2.shop_name,
@@ -392,7 +392,7 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model3.ship_overseas_flag,
                          0)
         self.assertEqual(item_model3.ship_overseas_area,
-                         "")
+                         None)
         self.assertEqual(item_model3.asuraku_flag,
                          1)
         self.assertEqual(item_model3.asuraku_area,
@@ -400,9 +400,9 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model3.affiliate_rate,
                          3)
         self.assertEqual(item_model3.start_time,
-                         "")
+                         None)
         self.assertEqual(item_model3.end_time,
-                         "")
+                         None)
         self.assertEqual(item_model3.review_count,
                          0)
         self.assertEqual(item_model3.review_average,
@@ -410,9 +410,9 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(item_model3.point_rate,
                          1)
         self.assertEqual(item_model3.point_rate_start_time,
-                         "")
+                         None)
         self.assertEqual(item_model3.point_rate_end_time,
-                         "")
+                         None)
         self.assertEqual(item_model3.gift_flag,
                          0)
         self.assertEqual(item_model3.shop_name,
@@ -526,13 +526,155 @@ class TestConvertOutputModel(unittest.TestCase):
         self.assertEqual(tag_model.parent_tag_id, 31)
         self.assertEqual(tag_model.item_count, 311)
 
+    def test_json_data_empty(self):
+        response_json = None
+        with open(path.join(
+                RESORCE_FOLDER, "TestConvertOutputModel_empty.json")) as f:
+            response_json = json.loads(f.read())
+
+        # モック設定
+        response_moc = Response()
+        response_moc.json = MagicMock(return_value=response_json)
+
+        # テスト実施
+        source_manager = SourceManager(APPLICATION_ID, AFFILIATE_ID)
+        entire_model: EntireModel = \
+            source_manager._SourceManager__convert_output_model(response_moc)
+
+        self.assertEqual(entire_model.count, 1303)
+        self.assertEqual(entire_model.page, 1)
+        self.assertEqual(entire_model.first, 1)
+        self.assertEqual(entire_model.last, 1)
+        self.assertEqual(entire_model.hits, 1)
+        self.assertEqual(entire_model.carrier, 0)
+        self.assertEqual(entire_model.page_count, 100)
+        self.assertEqual(len(entire_model.item_model_list), 1)
+        self.assertEqual(len(entire_model.genre_model_list), 1)
+        self.assertEqual(len(entire_model.tag_group_model_list), 1)
+
+        # 商品検索結果モデル1
+        item_model1: ItemModel = \
+            entire_model.item_model_list[0]
+        self.assertEqual(item_model1.item_name,
+                         None)
+        self.assertEqual(item_model1.catchcopy,
+                         None)
+        self.assertEqual(item_model1.item_code,
+                         None)
+        self.assertEqual(item_model1.item_price,
+                         822)
+        self.assertEqual(item_model1.item_caption,
+                         None)
+        self.assertEqual(item_model1.item_url,
+                         None)
+        self.assertEqual(item_model1.affiliate_url,
+                         None)
+        self.assertEqual(item_model1.image_flag,
+                         1)
+        self.assertEqual(len(item_model1.small_image_urls),
+                         1)
+        self.assertEqual(item_model1.small_image_urls[0],
+                         None)
+        self.assertEqual(len(item_model1.medium_image_urls),
+                         1)
+        self.assertEqual(item_model1.medium_image_urls[0],
+                         None)
+        self.assertEqual(item_model1.availability,
+                         1)
+        self.assertEqual(item_model1.tax_flag,
+                         0)
+        self.assertEqual(item_model1.postage_flag,
+                         1)
+        self.assertEqual(item_model1.credit_card_flag,
+                         1)
+        self.assertEqual(item_model1.shop_of_the_year_flag,
+                         0)
+        self.assertEqual(item_model1.ship_overseas_flag,
+                         0)
+        self.assertEqual(item_model1.ship_overseas_area,
+                         None)
+        self.assertEqual(item_model1.asuraku_flag,
+                         0)
+        self.assertEqual(item_model1.asuraku_area,
+                         None)
+        self.assertEqual(item_model1.affiliate_rate,
+                         3)
+        self.assertEqual(item_model1.start_time,
+                         None)
+        self.assertEqual(item_model1.end_time,
+                         None)
+        self.assertEqual(item_model1.review_count,
+                         0)
+        self.assertEqual(item_model1.review_average,
+                         0)
+        self.assertEqual(item_model1.point_rate,
+                         1)
+        self.assertEqual(item_model1.point_rate_start_time,
+                         None)
+        self.assertEqual(item_model1.point_rate_end_time,
+                         None)
+        self.assertEqual(item_model1.gift_flag,
+                         0)
+        self.assertEqual(item_model1.shop_name,
+                         None)
+        self.assertEqual(item_model1.shop_code,
+                         None)
+        self.assertEqual(item_model1.shop_url,
+                         None)
+        self.assertEqual(item_model1.shop_affiliate_url,
+                         None)
+        self.assertEqual(item_model1.genre_id,
+                         None)
+        self.assertEqual(len(item_model1.tag_id_list),
+                         0)
+
+        # ジャンル情報検索結果モデル1
+        genre_model1: GenreModel = \
+            entire_model.genre_model_list[0]
+        self.assertEqual(len(genre_model1.child_genre_model_list), 1)
+
+        # 親ジャンル
+        parent_genre_model1: ParentGenreModel = genre_model1.parent_genre_model
+        self.assertEqual(parent_genre_model1.genre_id, None)
+        self.assertEqual(parent_genre_model1.genre_name, None)
+        self.assertEqual(parent_genre_model1.genre_level, None)
+
+        # 現ジャンル
+        current_genre_model1: CurrentGenreModel = genre_model1.current_genre_model
+        self.assertEqual(current_genre_model1.genre_id, None)
+        self.assertEqual(current_genre_model1.genre_name, None)
+        self.assertEqual(current_genre_model1.genre_level, None)
+        self.assertEqual(current_genre_model1.item_count, None)
+
+        # 子ジャンル
+        child_genre_model1: ChildGenreModel = genre_model1.child_genre_model_list[0]
+        self.assertEqual(child_genre_model1.genre_id, None)
+        self.assertEqual(child_genre_model1.genre_name, None)
+        self.assertEqual(child_genre_model1.genre_level, None)
+        self.assertEqual(child_genre_model1.item_count, None)
+
+        # タググループ情報検索結果モデル1
+        tag_group_model1: TagGroupModel = \
+            entire_model.tag_group_model_list[0]
+        self.assertEqual(tag_group_model1.tag_group_id, 1001050)
+        self.assertEqual(tag_group_model1.tag_group_name, None)
+        self.assertEqual(len(tag_group_model1.tag_model_list), 1)
+
+        # タグ情報検索結果モデル1
+        tag_model: TagModel = \
+            tag_group_model1.tag_model_list[0]
+        self.assertEqual(tag_model.tag_id, 1011605)
+        self.assertEqual(tag_model.tag_name, None)
+        self.assertEqual(tag_model.parent_tag_id, 0)
+        self.assertEqual(tag_model.item_count, 0)
+
 
 class TestGenerateUrl(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
 
-        CONFIG_DIR = path.abspath(path.join(path.dirname(__file__),"..", "..", "config"))
+        CONFIG_DIR = path.abspath(path.join(path.dirname(__file__), "..", "config"))
         CONFIG_FILE = "rakutenApi.yaml"
 
         config_file = path.join(CONFIG_DIR, CONFIG_FILE)
